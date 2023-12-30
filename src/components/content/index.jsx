@@ -50,7 +50,7 @@ export const Content = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center mt-10">
+      <div className="flex justify-center items-center mt-10 mb-10">
         <ClipLoader
           color="grey"
           loading="true"
@@ -63,19 +63,19 @@ export const Content = () => {
   }
   if (isError) {
     return (
-      <center>
+      <div className="flex justify-center items-center mt-10 mb-10">
         <h3 className="mt-10">Error: {error.message}</h3>
-      </center>
+      </div>
     );
   }
   return (
-    <div className="content mt-10">
+    <div className="content mt-10 mb-10">
       {todos?.length ? (
         <>
           {todos?.map((item) => (
             <div
               key={item.id}
-              className="todo-item grid grid-cols-4 gap-4 mb-3 p-1 rounded-md bg-slate-200"
+              className="todo-item grid grid-cols-4 gap-4 mb-3 p-1 rounded-md bg-slate-100"
             >
               <div className="col-span-3 flex justify-center items-center">
                 {item.isCompleted == 1 ? <s>{item.task}</s> : item.task}
@@ -119,9 +119,9 @@ export const Content = () => {
           ))}
         </>
       ) : (
-        <div className="todo-item grid grid-cols-4 gap-4 mb-3 p-3 rounded-md bg-slate-200">
+        <div className="todo-item grid grid-cols-4 gap-4 mb-3 p-3 rounded-md bg-slate-100">
           <div className="col-span-4 flex justify-center items-center">
-            Add New Task !
+            Add new task!
           </div>
         </div>
       )}
